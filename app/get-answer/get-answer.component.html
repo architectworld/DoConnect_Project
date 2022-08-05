@@ -1,0 +1,91 @@
+<div class="container">
+  <img src="/assets/wave.svg" alt="loading..." class="bg-img" />
+  <h3 style="text-align: left display-4">Welcome {{ user.name }}!</h3>
+  <div>
+    <button class="btn answer-btn d-inline" style="width: 20%">
+      <a
+        routerLink="/user"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Go Back</a
+      >
+    </button>
+  </div>
+  <div class="row">
+    <div class="col-6" *ngIf="alreadyAnswered">
+      <div
+        class="card mb-2 bg-color"
+        style="width: 30rem; border: 3px solid #f0a04b; border-radius: 0.5rem"
+        *ngFor="let answer of answers"
+      >
+        <div class="card-body">
+          <h5 class="card-title display-6">{{ answer.question.question }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted d-inline">
+            Asked By {{ answer.question.user.name }}
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted d-inline p-5">
+            Topic-
+            {{ answer.question.topic }}
+          </h6>
+          <p class="card-text fs-5">{{ answer.answer }}</p>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Answered By {{ answer.answerUser.name }}
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 my-5">
+      <div class="accordion" id="accordionExample1">
+        <div class="yourAnswer">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="false"
+                aria-controls="collapseOne"
+              >
+                Add your answer here.
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample1"
+            >
+              <div class="accordion-body">
+                <form
+                  #addAnswer="ngForm"
+                  (ngSubmit)="giveAnswer(addAnswer.value)"
+                >
+                  <div class="mb-3 padding">
+                    <textarea
+                      ngModel
+                      name="answer"
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                      placeholder="Write your answer"
+                      required
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn answer-btn">
+                    Submit answer
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <img src="/assets/Answer.svg" alt=" loading...." />
+      </div>
+    </div>
+  </div>
+</div>
+
+

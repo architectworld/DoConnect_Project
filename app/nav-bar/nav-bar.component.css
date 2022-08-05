@@ -1,0 +1,20 @@
+.navbar-brand {
+  font-weight: bold;
+}
+.question-btn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: #f0a04b;
+}
+
+.question-btn:hover {
+  background-color: #fefbe9;
+  border: 1px solid #f0a04b;
+  color: #f0a04b;
+}

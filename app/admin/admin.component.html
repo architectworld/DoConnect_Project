@@ -1,0 +1,176 @@
+<div class="container my-3 d-flex flex-row float-right">
+  <span class="container me-5">
+    <img class="bg-img" src="/assets/wave.svg" alt="error" />
+    <h4 style="text-align: left">Welcome {{ admin.name }}!</h4></span
+  >
+  <span class="container">
+    <button
+      class="btn me-2 function-btn float-end"
+      (click)="adminLogout(admin.id)"
+      type="button"
+    >
+      LogOut
+    </button>
+  </span>
+</div>
+<div class="container">
+  <div class>
+    <button class="btn my-2 function-btn" (click)="addAdmin()" type="button">
+      Add a new Admin
+    </button>
+
+    <br />
+
+    <button
+      (click)="getUnApprovedQuestions()"
+      class="btn my-2 function-btn"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#questionTable"
+      aria-expanded="false"
+      aria-controls="questionTable"
+    >
+      Let's Approve the Questions
+    </button>
+    <br />
+    <div *ngIf="questionThere" class="collapse" id="questionTable">
+      <div class="row mt-1">
+        <div class="col-4" *ngFor="let question of questions">
+          <div
+            class="card bg-color"
+            style="
+              width: 18rem;
+              border: 3px solid #f0a04b;
+              border-radius: 0.5rem;
+            "
+          >
+            <div class="card-body">
+              <h5 class="card-title">{{ question.question }}</h5>
+
+              <h6 class="card-subtitle mb-2 text-muted">
+                -asked by {{ question.user.name }}
+              </h6>
+              <h6 class="card-subtitle mb-2 text-muted">
+                Topic- {{ question.topic }}
+              </h6>
+              <h6 class="card-subtitle mb-2 text-muted">
+                ID- {{ question.id }}
+              </h6>
+
+              <button
+                class="btn function2-btn"
+                id="{{ question }}"
+                (click)="approveQuestion(question.id)"
+              >
+                Approved
+              </button>
+              <button
+                class="btn function2-btn"
+                id="{{ question }}"
+                (click)="deleteQuestion(question.id)"
+              >
+                Rejectd
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <button
+      (click)="getUnApprovedAnswers()"
+      class="btn my-2 function-btn"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#answerTable"
+      aria-expanded="false"
+      aria-controls="answerTable"
+    >
+      Let's Approve the Answers
+    </button>
+    <div *ngIf="answerThere" class="collapse" id="answerTable">
+      <div class="row mt-1">
+        <div class="col-4" *ngFor="let answer of answers">
+          <div
+            class="card bg-color"
+            style="
+              width: 18rem;
+              border: 3px solid #f0a04b;
+              border-radius: 0.5rem;
+            "
+          >
+            <div class="card-body">
+              <h5 class="card-title">{{ answer.question.question }}</h5>
+              <h6 class="card-text">{{ answer.answer }}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">
+                -answered by {{ answer.answerUser.name }}
+              </h6>
+              <h6 class="card-subtitle mb-2 text-muted">ID- {{ answer.id }}</h6>
+
+              <button
+                class="btn function2-btn"
+                id="{{ answer.id }}"
+                (click)="approveAnswer(answer.id)"
+              >
+                Aprroved
+              </button>
+              <button
+                class="btn function2-btn"
+                id="{{ answer.id }}"
+                (click)="deleteAnswer(answer.id)"
+              >
+                Rejected
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <br />
+    <button
+      (click)="getAllUsers()"
+      class="btn my-2 function-btn"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#userTable"
+      aria-expanded="false"
+      aria-controls="userTable"
+    >
+      List of All Users
+    </button>
+    <div *ngIf="userThere" class="collapse" id="userTable">
+      <div class="row mb-2">
+        <div class="col-4" *ngFor="let user of users">
+          <div
+            class="card bg-color"
+            style="
+              width: 18rem;
+              border: 3px solid #f0a04b;
+              border-radius: 0.5rem;
+            "
+          >
+            <img
+              src="/assets/female.svg"
+              class="card-img-top"
+              alt="..."
+              style="
+                width: 100px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 0.5rem;
+              "
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ user.name }}</h5>
+              <h5 class="card-title">{{ user.email }}</h5>
+              <h5 class="card-title">{{ user.phoneNumber }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

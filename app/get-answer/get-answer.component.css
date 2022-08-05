@@ -1,0 +1,48 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+.bg-color {
+  background-color: #fefbe9;
+}
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+h5 {
+  font-family: "Poppins", sans-serif;
+}
+.answer-btn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: #f0a04b;
+}
+
+.answer-btn:hover {
+  background-color: #fefbe9;
+  border: 1px solid #f0a04b;
+  color: #f0a04b;
+}
+.bg-img {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+}
+a:hover {
+  color: #f0a04b;
+}
+

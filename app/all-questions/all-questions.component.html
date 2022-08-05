@@ -1,0 +1,50 @@
+<nav class="navbar bg-color mx-3 my-3" style="box-shadow: 5px 10px #e1eedd">
+  <div class="container-fluid">
+    <button (click)="getQuestions('All')" class="btn filter-btn">All</button>
+    <button (click)="getQuestions('Java')" class="btn filter-btn">Java</button>
+    <button (click)="getQuestions('Python')" class="btn filter-btn">
+      Python
+    </button>
+    <button (click)="getQuestions('Cloud')" class="btn filter-btn">
+      Cloud
+    </button>
+    <button (click)="getQuestions('Others')" class="btn filter-btn">
+      Others
+    </button>
+  </div>
+</nav>
+<div class="my-3">
+  <img src="/assets/wave.svg" alt="loading..." class="bg-img" />
+  <div class="container">
+    <div class="row">
+      <div class="col-4" *ngFor="let question of questions">
+        <div
+          class="card mb-2"
+          style="width: 18rem; border: 3px solid #f0a04b; border-radius: 0.5rem"
+        >
+          <img
+            src="/assets/{{ question.topic }}.png"
+            class="card-img-top"
+            alt="loading..."
+            style="border-radius: 0.5rem; height: 18rem"
+          />
+          <div class="card-body bg-color" style="border-top: 3px solid #f0a04b">
+            <h5 class="card-title">{{ question.question }}</h5>
+            <p class="card-text">
+              <strong>Posted By-</strong> {{ question.user.name }}<br />
+              <strong>Topic-</strong>{{ question.topic }}
+            </p>
+            <button
+              class="btn my-2 question-btn"
+              id="{{ question.id }}"
+              (click)="sendQuestionToGetAnswer(question.id)"
+            >
+              Get Answers
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

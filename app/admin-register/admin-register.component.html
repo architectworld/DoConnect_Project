@@ -1,0 +1,93 @@
+<div class="body">
+  <img class="wave-img" src="/assets/wave.svg" alt="error" />
+  <div class="register">
+    <div class="answer-img">
+      <img src="/assets/login.svg" alt="error" />
+    </div>
+    <div class="sign-container">
+      <form
+        ngNativeValidate
+        #adminregister="ngForm"
+        (ngSubmit)="adminRegister(adminregister.value)"
+      >
+        <img class="avatar" src="/assets/female.svg" alt="error" />
+
+        <h2>Register As Admin</h2>
+
+        <div class="input-div">
+          <input
+            ngModel
+            name="fName"
+            type="text"
+            class="form-control input-fields"
+            placeholder="First name"
+            aria-label="First name"
+            required
+          />
+        </div>
+        <div class="mb-1">
+          <div class="input-div">
+            <input
+              ngModel
+              name="lName"
+              type="text"
+              class="form-control input-fields"
+              placeholder="Last name"
+              aria-label="Last name"
+              required
+            />
+          </div>
+        </div>
+
+        <br />
+        <div class="mb-1">
+          <div class="input-div">
+            <input
+              ngModel
+              name="email"
+              type="text"
+              class="form-control input-fields"
+              id="formGroupExampleInput"
+              placeholder="Email"
+              required
+            />
+          </div>
+        </div>
+        <div class="mb-1">
+          <div class="input-div">
+            <input
+              ngModel
+              name="password"
+              type="password"
+              class="form-control input-fields"
+              id="formGroupExampleInput2"
+              placeholder="Password"
+              required
+              minlength="8"
+            />
+          </div>
+        </div>
+        <div class="mb-1">
+          <div class="input-div">
+            <input
+              ngModel
+              name="mNumber"
+              type="text"
+              class="form-control input-fields"
+              id="formGroupExampleInput2"
+              placeholder="Mobile Number"
+              required
+              minlength="10"
+              maxlength="10"
+            />
+          </div>
+        </div>
+
+        <div class="registerButton">
+          <button type="submit" class="btn button me-2">Register</button>
+          <input class="btn button" type="reset" value="Reset" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

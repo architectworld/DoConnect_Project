@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.body {
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+.wave-img {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.register {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 7rem;
+  padding: 0 2rem;
+}
+.answer-img {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.answer-img img {
+  width: 500px;
+}
+.sign-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form {
+  width: 336 px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fefbe9;
+  padding: 1rem 5rem;
+  margin: 2rem;
+}
+.avatar {
+  width: 100px;
+}
+form h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 15px 0;
+  color: #f0a04b;
+}
+.input-div {
+  margin: 15px 0;
+  padding: 5px 0;
+  border-bottom: 2px solid black;
+}
+.input-fields {
+  width: 20rem;
+  padding: 0.2rem;
+  border-radius: 0.7rem;
+}
+a {
+  display: block;
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #999;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+a:hover {
+  color: #f0a04b;
+}
+.button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: #f0a04b;
+}
+
+.button:hover {
+  background-color: #fefbe9;
+  border: 1px solid #f0a04b;
+  color: #f0a04b;
+}
+.registerButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
